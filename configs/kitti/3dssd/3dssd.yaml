@@ -12,7 +12,7 @@ TRAIN:
     OPEN: True
     FLIP: True
     MIXUP:
-      OPEN: True
+      OPEN: False
       SAVE_NUMPY_PATH: 'mixup_database/KITTI'
       PC_LIST: 'train'
       CLASS: ('Car', )
