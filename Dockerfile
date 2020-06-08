@@ -27,7 +27,7 @@ RUN mkdir /ws && \
 
 RUN cp /usr/local/cuda-9.0/targets/x86_64-linux/lib/stubs/libcuda.so /usr/local/cuda-9.0/targets/x86_64-linux/lib/libcuda.so.1
 RUN ldconfig
-RUN echo "export PYTHONPATH=$PYTHONPATH:/path/to/3DSSD/lib:/path/to/3DSSD/mayavi" >> ~/.bashrc
+RUN echo "export PYTHONPATH=$PYTHONPATH:/ws/3DSSD/lib:/ws/3DSSD/mayavi" >> ~/.bashrc
 
 RUN cd /ws/3DSSD && \
     bash compile_all.sh /usr/local/lib/python3.6/dist-packages/tensorflow /usr/local/cuda-9.0
