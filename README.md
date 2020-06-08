@@ -126,11 +126,11 @@ Currently we only support KITTI dataset, and NuScenes dataset will be supported 
 
 
 ```
-python lib/core/data_preprocessor.py --cfg configs/kitti/3dssd/3dssd.yaml --split training --img_list train
+python3 lib/core/data_preprocessor.py --cfg configs/kitti/3dssd/3dssd.yaml --split training --img_list train
 
-python lib/core/data_preprocessor.py --cfg configs/kitti/3dssd/3dssd.yaml --split training --img_list val
+python3 lib/core/data_preprocessor.py --cfg configs/kitti/3dssd/3dssd.yaml --split training --img_list val
 
-python lib/core/data_preprocessor.py --cfg configs/kitti/3dssd/3dssd.yaml --split testing --img_list test
+python3 lib/core/data_preprocessor.py --cfg configs/kitti/3dssd/3dssd.yaml --split testing --img_list test
 ```
 
 The preprocessed data will be saved in directory **data/KITTI**. You can also modify the dataset path and saving path in configure file:
@@ -168,14 +168,14 @@ Then run
 
 
 ```
-python lib/core/trainer.py --cfg configs/kitti/3dssd/3dssd.yaml
+python3 lib/core/trainer.py --cfg configs/kitti/3dssd/3dssd.yaml
 ```
 
 The trained models, configuration and logs will be saved in the **log** folder, which can also be assigned in configure files.
 
 To load a pretrained model, you can use **--restore_model_path**.
 ```
-python lib/core/trainer.py --cfg configs/kitti/3dssd/3dssd.yaml --restore_model_path /path/to/model
+python3 lib/core/trainer.py --cfg configs/kitti/3dssd/3dssd.yaml --restore_model_path /path/to/model
 ```
 
 
@@ -183,13 +183,13 @@ python lib/core/trainer.py --cfg configs/kitti/3dssd/3dssd.yaml --restore_model_
 
 Evaluating a trained weight by
 ```
-python lib/core/evaluator.py --cfg configs/kitti/3dssd/3dssd.yaml --restore_model_path /path/to/weight
+python3 lib/core/evaluator.py --cfg configs/kitti/3dssd/3dssd.yaml --restore_model_path pretrained_model/3dssd/model-75051.data-00000-of-00001
 ```
 
 To evaluate all weights produced in the training process, run
 
 ```
-python lib/core/evaluator.py --cfg configs/kitti/3dssd/3dssd.yaml --restore_model_path /path/to/weight_dir
+python3 lib/core/evaluator.py --cfg configs/kitti/3dssd/3dssd.yaml --restore_model_path /path/to/weight_dir
 ```
 
 KITTI Detection results and evaluation results will be saved in the **result** folder. 
@@ -197,7 +197,7 @@ KITTI Detection results and evaluation results will be saved in the **result** f
 In order to test a model and store its prediction results, run
 
 ```
-python lib/core/tester.py --cfg configs/kitti/3dssd/3dssd.yaml --restore_model_path /path/to/weight
+python3 lib/core/tester.py --cfg configs/kitti/3dssd/3dssd.yaml --restore_model_path /path/to/weight
 ```
 These results will be saved at **/path/to/weight/kitti_result**.
 
